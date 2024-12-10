@@ -1,0 +1,105 @@
+
+body{
+    background: linear-gradient( red
+    ,blue);
+}
+.container{
+    background: linear-gradient(to bottom, red
+    ,blue);
+    width: 80vh ;
+    height: 80vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    position: relative;
+
+    animation: rotate 6s linear infinite  reverse;
+}
+
+.parent{
+    background: linear-gradient(to top, red
+    ,blue);
+    width: 40vh ;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+
+    animation: rotate 5s infinite linear ;
+}
+
+.ball{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    background: radial-gradient(white,black);
+    top: 50px;
+    left: 50px;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+
+    animation: circle 6s infinite linear    ;
+}
+
+h2{
+animation: rotate 4s infinite;
+}
+
+@keyframes circle {
+    /* omeans o ms 100 mens 1000ms */
+    /* 0%{  
+        left: 50px;
+        top: 50px;
+    } */
+
+    25%{
+        left: 1000px;
+        top: 50px;
+    }
+
+    50%{
+        left: 1000px;
+        top: 1000px;
+    }
+
+    75%{
+        left: 50px;
+        top: 1000px;
+        
+    }
+    100%{
+
+        left: 50px;
+        top: 50px;
+    }
+
+    
+}
+
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/* .test{
+    background-color: black;
+}
+
+.item-1{
+    background-color: rgb(189, 89, 42);
+    position: absolute;
+}
+.item-2{
+    background-color: green;
+}
+.item-3{
+    background-color: green;
+} */

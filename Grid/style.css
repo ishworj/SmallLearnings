@@ -1,0 +1,112 @@
+body{
+    margin: 0;
+}
+.parent{
+    background: black;
+    color: white;
+    font-size: 2rem;
+    padding: 1rem;
+    min-height: 100vh;
+    /* grid */
+    display: grid;
+    gap: 10px;
+    /* cant make dynamic using this but can increase size of all elements in a columns or rows  */
+    /* grid-template-columns:repeat(3,1fr); */
+    /* grid-template-rows: 1fr 2fr 2fr; */
+/* rule
+Evey item in indide grid container have unique and nust to haaver a name and it need to be defined in a grid template areas to make work  and not same neame insde the template areas */
+
+
+/* to fnd the number of columns looks for gap */
+    grid-template-areas:
+    "i1 i1"
+    "i2 i2" 
+    "i3 i4"
+    "i3 i5"
+    "i6 i9"
+    "i7 i9"
+    "i8 i9"
+    "i10 i10";
+
+    /* you can make a grid row or column track using this easily
+    "i1 i1 i3"
+    "i1 i5 i5" 
+    "i9 i7 i8"
+    "i2 i6 . ;   .means no element there  */
+
+}
+
+.parent > div {
+    background: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.item-1{
+    /* background-color: green !important; */
+    /* grid-row-start: 1;
+    grid-row-end: 2; */
+    /* grid-row: 3/4; */
+    /* grid-column-start: 1;
+    grid-column-end:2 ; */
+    /* grid-column: 3/4; */
+    grid-area:i1;
+    margin: 5px;
+    background: blue !important;
+}
+.item-2{
+    grid-area:i2;
+    background: red !important;
+}
+.item-3{
+    grid-area:i3;
+    /* background:linear-gradient( to right, red 80% , blue) !important;  many coloure*/ 
+    background:linear-gradient( 135deg , red , blue) !important;
+    color: black;
+}
+.item-4{
+    grid-area:i4;
+    background: rgb(175, 34, 3) !important;
+}
+.item-5{
+    grid-area:i5;
+    background: purple !important;
+}
+.item-6{
+    grid-area:i6;
+}
+.item-7{
+    grid-area:i7;
+    background: purple !important;
+}
+.item-8{
+    /* grid-column: 1/2;
+    grid-row: 1/2; */
+    grid-area:i8;
+    background: red !important;
+}
+.item-9{
+    grid-area:i9;
+
+    /* radialgradient */
+    background:radial-gradient(red 10% , blue 30%, red) !important ;
+
+}
+.item-10{
+    grid-area:i10;
+    background: black !important;
+}
+
+
+@media (width < 600px) {
+    .parent{
+        grid-template-areas:
+         "i6 i6 i2 i2 i2 i2"
+         "i3 i3 i3 i3 i1 i1"
+         "i4 i4 i4 i4 i1 i1"
+         "i4 i4 i4 i4 i9 i9"
+         "i5 i5 i7 i7 i8 i8";
+    }
+}
